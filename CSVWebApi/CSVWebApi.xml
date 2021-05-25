@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CSVWebApi</name>
+    </assembly>
+    <members>
+        <member name="M:CSVWebApi.Controllers.CSVFileController.Export(System.DateTime,System.DateTime)">
+            <summary>
+            Экспорт данных в CSV-файл
+            </summary>
+            <param name="fromDt">Дата создания От</param>
+            <param name="toDt">Дата создания По</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
