@@ -1,4 +1,3 @@
-using CSVWebApi.EF;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -10,8 +9,11 @@ using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 using System;
 using System.IO;
+using WebApi.DAL.EF;
+using WebApi.BLL.Interfaces;
+using WebApi.BLL.Services;
 
-namespace CSVWebApi
+namespace WebApi
 {
     public class Startup
     {
@@ -36,7 +38,10 @@ namespace CSVWebApi
                     })
                 .UseLoggerFactory(LoggerFactory.Create(builder => builder.AddConsole()))
                 .EnableSensitiveDataLogging();
-            });
+            })
+            .AddUnitOfWork<TestDbContext>();
+
+            services.AddTransient<IExportService, CsvExportService>();
 
             services.AddSwaggerGen(c =>
             {

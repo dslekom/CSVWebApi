@@ -1,11 +1,11 @@
-using CSVWebApi.EF;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using System;
+using WebApi.DAL.EF;
 
-namespace CSVWebApi
+namespace WebApi
 {
     public class Program
     {

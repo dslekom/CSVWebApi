@@ -1,7 +1,7 @@
-﻿using CSVWebApi.Models;
+﻿using WebApi.DAL.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace CSVWebApi.EF
+namespace WebApi.DAL.EF
 {
     public class TestDbContext : DbContext
     {

@@ -1,12 +1,16 @@
 ﻿using System;
 using System.Linq;
-using CSVWebApi.Models;
+using WebApi.DAL.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace CSVWebApi.EF
+namespace WebApi.DAL.EF
 {
     public static class DbInitializer
     {
+        /// <summary>
+        /// Инициализация бд тестовыми данными
+        /// </summary>
+        /// <param name="context"></param>
         public static void Initialize(TestDbContext context)
         {
             if (context.Database.ProviderName != "Microsoft.EntityFrameworkCore.InMemory")
@@ -20,10 +24,15 @@ namespace CSVWebApi.EF
             }
         }
 
-        private static DateTime GetRandomDay()
+        /// <summary>
+        /// Получение рандомной даты в период от минимальной переданной до текущей
+        /// </summary>
+        /// <param name="minDate"></param>
+        /// <returns></returns>
+        private static DateTime GetRandomDay(DateTime? minDate)
         {
             var rnd = new Random();
-            var  start = new DateTime(2021, 1, 1);
+            var start = minDate ?? DateTime.MinValue;
             int range = (DateTime.Today - start).Days;
             return start.AddDays(rnd.Next(range));
         }
@@ -38,7 +47,7 @@ namespace CSVWebApi.EF
 
                 for (int i = 0; i < 1000; i++)
                 {
-                    var rndDate = GetRandomDay();
+                    var rndDate = GetRandomDay(new DateTime(2021, 1, 1));
                     var testModel = new TestModel
                     {
                         Name = "Test name",

@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Migrations;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
-namespace CSVWebApi.Migrations
+namespace WebApi.Migrations
 {
     public partial class InitialCreate : Migration
     {

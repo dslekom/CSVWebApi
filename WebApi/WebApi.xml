@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <doc>
     <assembly>
-        <name>CSVWebApi</name>
+        <name>WebApi</name>
     </assembly>
     <members>
-        <member name="M:CSVWebApi.Controllers.CSVFileController.Export(System.DateTime,System.DateTime)">
+        <member name="M:WebApi.Controllers.ExportDataController.ExportToCsv(System.DateTime,System.DateTime)">
             <summary>
             Экспорт данных в CSV-файл
             </summary>
