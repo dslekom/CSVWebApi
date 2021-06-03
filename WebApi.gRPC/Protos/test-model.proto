@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option csharp_namespace = "WebApi.gRPC.Services";
+
+package webapi.grpc.services.testmodelimport;
+
+service TestModelImport {
+	rpc Add (TestModelRequest) returns (TestModelResponse);
+}
+
+message TestModelRequest {
+	string name = 1;
+	string description = 2;
+}
+
+message TestModelResponse {
+	int32 id = 1;
+	string name = 2;
+	string description = 3;
+}

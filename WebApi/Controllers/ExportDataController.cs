@@ -41,9 +41,9 @@ namespace WebApi.Controllers
             try
             {
                 var data = await database.GetRepository<TestModel>()
-                .Find(x => !x.IsDeleted && fromDt <= x.CreatedAt && x.CreatedAt <= toDt)
-                .OrderBy(x => x.CreatedAt)
-                .ToListAsync();
+                    .Find(x => !x.IsDeleted && fromDt <= x.CreatedAt && x.CreatedAt <= toDt)
+                    .OrderBy(x => x.CreatedAt)
+                    .ToListAsync();
 
                 var exportResult = await exportService.ExportDataAsync(data, excludeColumnNames: new[] { "ID" });
                 var stream = new MemoryStream(Encoding.Default.GetBytes(exportResult));
