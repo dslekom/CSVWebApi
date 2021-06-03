@@ -5,9 +5,17 @@ VisualStudioVersion = 16.0.31129.286
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApi", "WebApi\WebApi.csproj", "{7C3067B2-C319-48D5-AA2D-AC72C423CCEC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi.DAL", "WebApi.DAL\WebApi.DAL.csproj", "{6164FC6A-4BAD-4E69-92AD-0871D56A7A36}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApi.DAL", "WebApi.DAL\WebApi.DAL.csproj", "{6164FC6A-4BAD-4E69-92AD-0871D56A7A36}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi.BLL", "WebApi.BLL\WebApi.BLL.csproj", "{2627ED7B-C0BA-48E9-BD22-8AB047D0F55F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApi.BLL", "WebApi.BLL\WebApi.BLL.csproj", "{2627ED7B-C0BA-48E9-BD22-8AB047D0F55F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApi.gRPC", "WebApi.gRPC\WebApi.gRPC.csproj", "{A5F1C683-BAAC-4EE1-B94F-9980A5047943}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApi.RabbitMQ", "WebApi.RabbitMQ\WebApi.RabbitMQ.csproj", "{93EE8FCB-2516-45C3-A17D-39241AFC28AA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApi.RabbitMq.Client", "WebApi.RabbitMq.Client\WebApi.RabbitMq.Client.csproj", "{F8A069A7-9281-4555-88E3-6FB944B19A73}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi.Common", "WebApi.Common\WebApi.Common.csproj", "{A6F86F44-4BAF-4021-9083-5C633B0D33A8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +35,22 @@ Global
 		{2627ED7B-C0BA-48E9-BD22-8AB047D0F55F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2627ED7B-C0BA-48E9-BD22-8AB047D0F55F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2627ED7B-C0BA-48E9-BD22-8AB047D0F55F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5F1C683-BAAC-4EE1-B94F-9980A5047943}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5F1C683-BAAC-4EE1-B94F-9980A5047943}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5F1C683-BAAC-4EE1-B94F-9980A5047943}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5F1C683-BAAC-4EE1-B94F-9980A5047943}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93EE8FCB-2516-45C3-A17D-39241AFC28AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93EE8FCB-2516-45C3-A17D-39241AFC28AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93EE8FCB-2516-45C3-A17D-39241AFC28AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93EE8FCB-2516-45C3-A17D-39241AFC28AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8A069A7-9281-4555-88E3-6FB944B19A73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8A069A7-9281-4555-88E3-6FB944B19A73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8A069A7-9281-4555-88E3-6FB944B19A73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8A069A7-9281-4555-88E3-6FB944B19A73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6F86F44-4BAF-4021-9083-5C633B0D33A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6F86F44-4BAF-4021-9083-5C633B0D33A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6F86F44-4BAF-4021-9083-5C633B0D33A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6F86F44-4BAF-4021-9083-5C633B0D33A8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

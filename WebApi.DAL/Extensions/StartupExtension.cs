@@ -3,7 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 using WebApi.DAL.Interfaces;
 using WebApi.DAL.Repositories;
 
-namespace WebApi
+namespace WebApi.DAL.Extensions
 {
     public static class StartupExtension
     {

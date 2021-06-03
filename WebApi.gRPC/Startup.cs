@@ -1,20 +1,15 @@
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using Microsoft.OpenApi.Models;
-using Microsoft.EntityFrameworkCore;
-using System.Reflection;
-using System;
-using System.IO;
 using WebApi.DAL.EF;
-using WebApi.BLL.Interfaces;
-using WebApi.BLL.Services;
 using WebApi.DAL.Extensions;
+using WebApi.gRPC.Services;
 
-namespace WebApi
+namespace WebApi.gRPC
 {
     public class Startup
     {
@@ -27,7 +22,7 @@ namespace WebApi
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            services.AddGrpc();
 
             services.AddDbContextPool<TestDbContext>(options =>
             {
@@ -40,20 +35,6 @@ namespace WebApi
                 .EnableSensitiveDataLogging();
             })
             .AddUnitOfWork<TestDbContext>();
-
-            services.AddTransient<IExportService, CsvExportService>();
-
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new OpenApiInfo
-                {
-                    Version = "v1",
-                    Title = "CSV Web Api"
-                });
-                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
-                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
-                c.IncludeXmlComments(xmlPath);
-            });
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -61,17 +42,13 @@ namespace WebApi
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "CSV Web Api v1"));
             }
 
             app.UseRouting();
 
-            app.UseAuthorization();
-
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllers();
+                endpoints.MapGrpcService<TestModelService>();
             });
         }
     }
